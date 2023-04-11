@@ -3,8 +3,6 @@ import Link from "next/link";
 import { NavHamburger } from "./NavHamburger";
 import { Dropdown } from "./NavDropdown";
 
-// import { Toggle } from "./toggle";
-
 export interface NavBarProps {
   className?: string;
 }

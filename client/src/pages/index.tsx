@@ -1,5 +1,8 @@
 import Head from "next/head";
-import { NavBar } from "@/components/navbar/navbar";
+import { NavBar } from "@/components/navbar/NavBar";
+import { Footer } from "@/components/Footer/Footer";
+import { ContactForm } from "@/components/ContactForm/ContactForm";
+import { Welcome } from "@/components/Home/Welcome";
 
 export default function Home() {
   return (
@@ -9,8 +12,12 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
-        <h1 className="text-2xl font-bold md:underline">eina &hearts;</h1>
+        <Welcome />
+        <ContactForm />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
