@@ -13,7 +13,7 @@ export const ContactForm = (props: ContactFormProps) => {
   const { className } = props;
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-alabaster">
       <div className="border border-black rounded-2xl p-8 m-12 relative flex flex-col">
         <h1 className="text-4xl">¿Te suena?</h1>
         <div className="py-10">
@@ -31,9 +31,11 @@ export const ContactForm = (props: ContactFormProps) => {
           </p>
         </div>
         <SubmitContactForm />
-        <button className="border border-black rounded-full p-1 px-4 absolute bg-white -bottom-4">
-          Enviar
-        </button>
+        <div className="flex justify-center">
+          <button className="border border-black rounded-full p-1 px-4 absolute bg-alabaster -bottom-4">
+            Enviar
+          </button>
+        </div>
       </div>
     </div>
   );

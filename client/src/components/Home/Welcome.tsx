@@ -1,4 +1,5 @@
 import * as React from "react";
+import TextTransition from "./TextTransitions";
 
 export interface WelcomeProps {
   className?: string;
@@ -28,12 +29,14 @@ export const Welcome = (props: WelcomeProps) => {
           estés donde estés
         </h1>
         <div>
-          <h1 className="float-right text-right">
+          <h1 className="float-right text-right mt-96">
             y conecta con quienes
             <br />
             comparten tus
             <br />
-            <span>preguntas</span>
+            <span className="text-6xl">
+              <TextTransition></TextTransition>
+            </span>
           </h1>
         </div>
       </div>
