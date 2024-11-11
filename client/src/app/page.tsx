@@ -1,19 +1,30 @@
-import Example from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="font-[family-name:var(--font-questrial-sans)] h-screen">
       <header>
-        <Example />
+        <Navbar />
       </header>
-      <main className="flex flex-col justify-center items-center h-4/5 text-center p-8">
+      <main className="flex flex-col justify-center h-3/5 text-center p-8 md:h-4/5">
         <h1 className="text-9xl">eina</h1>
         <h2>
           Compartiendo recursos de deconstrucción
           <br />
           para reconstruirnos en comunidad.
         </h2>
-        <p>Próximamente...</p>
+        <div className="flex flex-col gap-4 md:flex-row  md:justify-center md:items-center">
+          <Link
+            className="border-[1px] border-foreground rounded-lg m-auto mt-8 p-3 px-8 w-fit md:mx-2"
+            href="#"
+          >
+            Ver recursos
+          </Link>
+          <Link className="md:mt-8" href="#">
+            ¿Cómo funciona? &rarr;
+          </Link>
+        </div>
       </main>
       <footer className=""></footer>
     </div>
