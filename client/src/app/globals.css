@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #3a0324;
+  --foreground: #f0ede3;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: large;
+}
+
+h4 {
+  font-size: medium;
+}
+
+h5 {
+  font-size: small;
+}
+
+h6 {
+  font-size: x-small;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #3a0324;
+    --foreground: #f0ede3;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-questrial-sans), Helvetica, sans-serif;
+}
