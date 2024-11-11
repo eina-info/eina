@@ -56,7 +56,7 @@ const callsToAction = [
   { name: "View all resources", href: "#", icon: RectangleGroupIcon },
 ];
 
-export default function Example() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -68,7 +68,7 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">eina</span>
-            <img alt="" src="/favicon.ico" className="h-8 w-auto" />
+            <img alt="eina-logo" src="/favicon.ico" className="h-8 w-auto" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -125,11 +125,11 @@ export default function Example() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="bg-foreground flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold min-w-40 rounded-md text-gray-900 hover:bg-gray-100"
+                        className="bg-foreground flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold min-w-40 rounded-md text-gray-900 hover:bg-background hover:text-foreground hover:border-solid hover:border-[1px] hover:border-foreground"
                       >
                         <item.icon
                           aria-hidden="true"
-                          className="h-5 w-5 flex-none text-background"
+                          className="h-5 w-5 flex-none"
                         />
                         {item.name}
                       </a>
@@ -165,11 +165,11 @@ export default function Example() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed bg-stone inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed bg-foreground inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img alt="" src="/favicon.ico" className="h-8 w-auto" />
+              <span className="sr-only">eina</span>
+              <img alt="eina-logo" src="/favicon.ico" className="h-8 w-auto" />
             </a>
             <button
               type="button"
