@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        magenta: "#3A0324",
+        stone: "#F0EDE3",
       },
     },
   },
