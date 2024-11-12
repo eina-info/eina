@@ -25,8 +25,8 @@ import {
 } from "@heroicons/react/20/solid";
 
 /**
- * @name SignIn
- * @description Tbd...
+ * @name Navbar
+ * @description The main navigation component for the application.
  */
 
 const resources = [
