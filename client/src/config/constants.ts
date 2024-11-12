@@ -5,3 +5,11 @@ export const SITE_DESCRIPTION = `An online encyclopedia of DEI-focused events, b
 export const SITE_EMAIL_ADDRESS = `hola@eina.info`;
 export const SITE_EMAIL_LINK = `mailto:${SITE_EMAIL_ADDRESS}`;
 export const SITE_TITLE = "eina";
+export const SITE_VERBS = [
+  "preguntas",
+  "experiencias",
+  "valores",
+  "propósitos",
+  "anhelos",
+  "obstáculos",
+];
