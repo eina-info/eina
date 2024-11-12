@@ -1,5 +1,11 @@
 import Navbar from "@/components/Navbar/Navbar";
+import { SITE_TITLE } from "@/config/constants";
 import Link from "next/link";
+
+/**
+ * @name RoutineBuilder
+ * @description Landing Page..
+ */
 
 export default function Home() {
   return (
@@ -8,7 +14,7 @@ export default function Home() {
         <Navbar />
       </header>
       <main className="flex flex-col justify-center h-3/5 text-center p-8 md:h-4/5">
-        <h1 className="text-9xl">eina</h1>
+        <h1 className="text-9xl">{SITE_TITLE}</h1>
         <h2>
           Compartiendo recursos de deconstrucción
           <br />

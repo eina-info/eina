@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState } from "react";
 import {
   Dialog,
@@ -21,6 +23,11 @@ import {
   MicrophoneIcon,
   RectangleGroupIcon,
 } from "@heroicons/react/20/solid";
+
+/**
+ * @name SignIn
+ * @description Tbd...
+ */
 
 const resources = [
   {
@@ -66,10 +73,10 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">eina</span>
-            <img alt="eina-logo" src="/favicon.ico" className="h-8 w-auto" />
-          </a>
+            <img alt="eina-logo" src="/eina-logo.svg" className="h-8 w-auto" />
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -154,8 +161,11 @@ export default function Navbar() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-md text-foreground">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <a
+            href="/login"
+            className="text-md text-foreground border-[1px] border-foreground rounded-xl px-6 hover:text-background hover:bg-foreground"
+          >
+            Log in<span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -181,7 +191,7 @@ export default function Navbar() {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="-my-6 divide-y divide-background">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center rounded-lg py-2 pl-3 pr-3.5 text-base/7 text-background hover:bg-background hover:text-foreground">
@@ -235,7 +245,7 @@ export default function Navbar() {
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 text-background hover:bg-background hover:text-foreground"
                 >
                   Log in
