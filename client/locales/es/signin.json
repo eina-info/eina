@@ -1,0 +1,10 @@
+{
+  "login": "Iniciar sesión",
+  "resources": "Recursos",
+  "events": "Eventoooos",
+  "notAMember": "¿No tienes cuenta aún?",
+  "password": "Contraseña",
+  "forgotPassword": "Olvidé mi contraseña",
+  "email": "Correo electrónico",
+  "register": "Crea una cuenta"
+}
