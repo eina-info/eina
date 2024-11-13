@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 
 import { useState } from "react";
 import {
@@ -29,42 +30,43 @@ import {
  * @description The main navigation component for the application.
  */
 
-const resources = [
-  {
-    name: "Events",
-    description:
-      "Stay up-to-date with upcoming events in your area or online. Whether it's a concert, conference, or community gathering, find exciting opportunities to connect, learn, and have fun.",
-    href: "#",
-    icon: CalendarIcon,
-  },
-  {
-    name: "Podcasts",
-    description:
-      "Dive into engaging conversations, storytelling, and expert insights.",
-    href: "#",
-    icon: MicrophoneIcon,
-  },
-  {
-    name: "Books",
-    description:
-      "Browse our extensive collection of books across various topics.",
-    href: "#",
-    icon: BookOpenIcon,
-  },
-  {
-    name: "Movies",
-    description:
-      "Discover films that challenge societal norms, promote inclusivity, and highlight diverse voices.",
-    href: "#",
-    icon: FilmIcon,
-  },
-];
-const callsToAction = [
-  { name: "View all resources", href: "#", icon: RectangleGroupIcon },
-];
-
 export default function Navbar() {
+  const { t } = useTranslation("common");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const resources = [
+    {
+      name: t("events"),
+      description:
+        "Stay up-to-date with upcoming events in your area or online. Whether it's a concert, conference, or community gathering, find exciting opportunities to connect, learn, and have fun.",
+      href: "#",
+      icon: CalendarIcon,
+    },
+    {
+      name: "Podcasts",
+      description:
+        "Dive into engaging conversations, storytelling, and expert insights.",
+      href: "#",
+      icon: MicrophoneIcon,
+    },
+    {
+      name: "Books",
+      description:
+        "Browse our extensive collection of books across various topics.",
+      href: "#",
+      icon: BookOpenIcon,
+    },
+    {
+      name: "Movies",
+      description:
+        "Discover films that challenge societal norms, promote inclusivity, and highlight diverse voices.",
+      href: "#",
+      icon: FilmIcon,
+    },
+  ];
+  const callsToAction = [
+    { name: "View all resources", href: "#", icon: RectangleGroupIcon },
+  ];
 
   return (
     <header className="relative isolate z-10 bg-background">
@@ -138,7 +140,7 @@ export default function Navbar() {
                           aria-hidden="true"
                           className="h-5 w-5 flex-none"
                         />
-                        {item.name}
+                        {t("resources")}
                       </a>
                     ))}
                   </div>

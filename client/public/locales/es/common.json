@@ -1,0 +1,30 @@
+{
+  "heroPhrase": "Compartiendo recursos de deconstrucción para reconstruirnos en comunidad.",
+  "login": "Iniciar sesión",
+  "resources": "Recursos",
+  "events": "Eventoooos",
+  "books": "Libros",
+  "movies": "Cine",
+  "seeAllResources": "Ver todos los recursos",
+  "SITE_VERBS": [
+    "preguntas",
+    "experiencias",
+    "valores",
+    "propósitos",
+    "anhelos",
+    "obstáculos"
+  ],
+  "seeResource": "Ver recursos",
+  "step1": "Descubre",
+  "step2": "Aprende",
+  "step3": "Comparte",
+  "topics": "Temas",
+  "groups": "Collectivos",
+  "howItWorks": "¿Cómo funciona?",
+  "contact": "Contacto",
+  "notAMember": "No tengo cuenta aún",
+  "password": "contraseña",
+  "forgotPassword": "Olvidé mi contraseña",
+  "email": "Correo electrónico",
+  "register": "Crear una cuenta"
+}
