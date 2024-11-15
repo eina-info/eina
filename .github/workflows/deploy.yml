@@ -13,12 +13,11 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                app:
-                    - eina-web
-                    - eina-server
-                context:
-                    - './client'
-                    - './server'
+                include:
+                    - app: eina-web
+                      context: './client'
+                    - app: eina-server
+                      context: './server'
         steps:
             - uses: actions/checkout@v1
 
