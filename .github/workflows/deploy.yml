@@ -24,7 +24,7 @@ jobs:
             - name: Set Environment Variables
               run: |
                   echo "IMAGE_NAME=${{secrets.DOCKER_USERNAME}}/${{ matrix.app }}" >> $GITHUB_ENV
-                  echo "FULL_IMAGE_NAME=${{ matrix.app }}:$(date +%s)" >> $GITHUB_ENV
+                  echo "FULL_IMAGE_NAME=${{secrets.DOCKER_USERNAME}}/${{ matrix.app }}:$(date +%s)" >> $GITHUB_ENV
                   echo "CAPROVER_APP=${{ matrix.app }}" >> $GITHUB_ENV
                   echo "CONTEXT_DIR=${{ matrix.context }}" >> $GITHUB_ENV
             
