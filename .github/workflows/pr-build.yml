@@ -1,0 +1,30 @@
+---
+name: "PR Build"
+
+env:
+    DOCKERFILE: Dockerfile
+
+on:
+    pull_request:
+      types: [opened, synchronize]
+      branches:
+        - main
+
+jobs:
+    build-and-publish:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                context:
+                    - './server'
+                    - './client'
+        steps:
+            - uses: actions/checkout@v1
+
+            - name: Build docker image
+              shell: bash
+              run: .github/scripts/build_docker.sh
+              env:
+                DOCKERFILE: ${{ env.DOCKERFILE }}
+                CONTEXT_DIR: ${{ matrix.context }}
+                IMAGE_NAME: ${{ matrix.context }}
