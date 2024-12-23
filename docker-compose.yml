@@ -18,12 +18,9 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+      target: runner
     ports:
-      - "3000:3000"
-    volumes:
-      - ./client:/app
-    environment:
-      - NODE_ENV=development
+      - 3000:3000
 
 networks:
   default:
