@@ -16,4 +16,4 @@ COPY src bin pyproject.toml uv.lock ./
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
 RUN uv sync --frozen
 
-ENTRYPOINT ["uv", "run", "server:app"]
+CMD ["uvicorn", "api:build_api", "--host", "0.0.0.0", "--port", "8000"]

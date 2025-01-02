@@ -1,12 +1,10 @@
 import logging
 from argparse import ArgumentParser
-from contextlib import asynccontextmanager
 
-import uvicorn
 from fastapi import FastAPI
 from modules.event.application.container import ApplicationContainer as EventContainer
+from modules.event.presentation.graphql import query
 from modules.event.presentation.graphql.query import Query
-from shared.settings import config
 from strawberry import Schema
 from strawberry.fastapi import GraphQLRouter
 
@@ -38,33 +36,9 @@ def build_api():
     graphql_app = GraphQLRouter(schema)
 
     app.include_router(graphql_app, prefix="/graphql")
-    container = EventContainer(config=config)
 
-    @asynccontextmanager
-    def lf(app: FastAPI):
-        try:
-            container.wire()
-            yield
-        finally:
-            container.shutdown_resources()
+    container = EventContainer()
+    container.wire(modules=[query])
+    app.container = container
 
-    @app.on_event("startup")
-    async def startup_event():
-        await container.startup_resources()
-
-    @app.on_event("shutdown")
-    async def shutdown_event():
-        await container.shutdown_resources()
-
-
-if __name__ == "__main__":
-    args = get_args()
-
-    uvicorn.run(
-        "bin.api:build_api",
-        host=args.host,
-        port=args.port,
-        log_level=args.log_level,
-        workers=args.workers,
-        reload=args.reload,
-    )
+    return app
