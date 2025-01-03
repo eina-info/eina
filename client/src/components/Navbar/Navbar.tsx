@@ -36,30 +36,30 @@ export default function Navbar() {
 
   const resources = [
     {
-      name: t("events"),
+      name: "Eventos",
       description:
-        "Stay up-to-date with upcoming events in your area or online. Whether it's a concert, conference, or community gathering, find exciting opportunities to connect, learn, and have fun.",
+        "Mantente al día de los próximos eventos en su zona o en línea. Ya sea un taller, una conferencia o una reunión de la comunidad, encuentra interesantes oportunidades para conectar, aprender y reconstruirte.",
       href: "#",
       icon: CalendarIcon,
     },
     {
       name: "Podcasts",
       description:
-        "Dive into engaging conversations, storytelling, and expert insights.",
+        "Sumérjete en atractivas conversaciones, narraciones y opiniones de expertos.",
       href: "#",
       icon: MicrophoneIcon,
     },
     {
-      name: "Books",
+      name: "Libros",
       description:
-        "Browse our extensive collection of books across various topics.",
+        "Consulte nuestra amplia colección de libros sobre diversos temas de inclusión.",
       href: "#",
       icon: BookOpenIcon,
     },
     {
-      name: "Movies",
+      name: "Cine",
       description:
-        "Discover films that challenge societal norms, promote inclusivity, and highlight diverse voices.",
+        "Descubra películas que desafían las normas sociales, fomentan la inclusión y destacan voces diversas.",
       href: "#",
       icon: FilmIcon,
     },
@@ -86,14 +86,14 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(true)}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Abrir menú</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <Popover>
+          {/* <Popover>
             <PopoverButton className="flex items-center gap-x-1 text-md text-foreground">
-              Resources
+              Recursos
               <ChevronDownIcon
                 aria-hidden="true"
                 className="h-5 w-5 flex-none text-foreground"
@@ -140,26 +140,26 @@ export default function Navbar() {
                           aria-hidden="true"
                           className="h-5 w-5 flex-none"
                         />
-                        {t("resources")}
+                        Recursos
                       </a>
                     ))}
                   </div>
                 </div>
               </div>
             </PopoverPanel>
-          </Popover>
+          </Popover> */}
 
           <a href="#" className="text-md text-foreground">
-            Topics
+            Temas
           </a>
           <a href="#" className="text-md text-foreground">
-            Collectives
+            Collectivos
           </a>
           <a href="#" className="text-md text-foreground">
-            How It Works
+            ¿Cómo funciona?
           </a>
           <a href="#" className="text-md text-foreground">
-            Contact
+            Contacto
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -167,7 +167,7 @@ export default function Navbar() {
             href="/login"
             className="text-md text-foreground border-[1px] border-foreground rounded-xl px-6 hover:text-background hover:bg-foreground"
           >
-            Log in<span aria-hidden="true">&rarr;</span>
+            Iniciar sesión<span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -188,7 +188,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-background"
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Cerrar</span>
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
@@ -197,7 +197,7 @@ export default function Navbar() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center rounded-lg py-2 pl-3 pr-3.5 text-base/7 text-background hover:bg-background hover:text-foreground">
-                    Resources
+                    Recursos
                     <ChevronDownIcon
                       aria-hidden="true"
                       className="h-5 w-5 flex-none group-data-[open]:rotate-180"
@@ -224,25 +224,25 @@ export default function Navbar() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-background hover:bg-background hover:text-foreground"
                 >
-                  Topics
+                  Temas
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-background hover:bg-background hover:text-foreground"
                 >
-                  Collectives
+                  Colectivos
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-background hover:bg-background hover:text-foreground"
                 >
-                  How It Works
+                  ¿Cómo funciona?
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-background hover:bg-background hover:text-foreground"
                 >
-                  Contact
+                  Contacto
                 </a>
               </div>
               <div className="py-6">
@@ -250,7 +250,7 @@ export default function Navbar() {
                   href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 text-background hover:bg-background hover:text-foreground"
                 >
-                  Log in
+                  Iniciar sesión
                 </a>
               </div>
             </div>
