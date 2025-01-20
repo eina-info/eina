@@ -364,11 +364,13 @@ dependencies = [
 ]
 
 [package.dev-dependencies]
-dev = [
+lint = [
+    { name = "ruff" },
+]
+test = [
     { name = "pytest" },
     { name = "pytest-asyncio" },
     { name = "pytest-cov" },
-    { name = "ruff" },
     { name = "testcontainers" },
 ]
 
@@ -386,11 +388,11 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [
+lint = [{ name = "ruff", specifier = ">=0.7.4" }]
+test = [
     { name = "pytest", specifier = ">=8.3.3" },
     { name = "pytest-asyncio", specifier = ">=0.25.1" },
     { name = "pytest-cov", specifier = ">=6.0.0" },
-    { name = "ruff", specifier = ">=0.7.4" },
     { name = "testcontainers", specifier = ">=4.9.0" },
 ]
 
