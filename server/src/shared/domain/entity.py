@@ -5,7 +5,11 @@ from pydantic import BaseModel
 TEntityId = TypeVar("EntityId")
 
 
-class Entity(BaseModel, Generic[TEntityId]):
+class IsDeletedMixin(BaseModel):
+    is_deleted: bool = False
+
+
+class Entity(IsDeletedMixin, Generic[TEntityId]):
     id: Optional[TEntityId] = None
 
     def __eq__(self, other):

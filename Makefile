@@ -1,5 +1,5 @@
 # Paths
-PYTHONPATH := "$(shell pwd)/server/src:$(shell pwd)/server/src/modules"
+PYTHONPATH := "$(shell pwd)/server/src:$(shell pwd)/server/src/modules:$(shell pwd)/server/src/shared"
 
 # Docker Compose
 DC := docker compose
@@ -17,9 +17,17 @@ server-deps:
 	@cd server && uv sync && cd ..
 	@echo "$(OK_COLOR)==>$(NO_COLOR) Dependencies installed"
 
-server-test:
-	@echo "$(OK_COLOR)==>$(NO_COLOR) Running tests for server"
+server-test-unit:
+	@echo "$(OK_COLOR)==>$(NO_COLOR) Running server unit tests"
 	@PYTHONPATH=$(PYTHONPATH) uv run pytest server/tests/unit --cov ./server/tests --cov-report=xml -vvvv --disable-warnings
+
+server-test-integration:
+	@echo "$(OK_COLOR)==>$(NO_COLOR) Running server integration tests"
+	@PYTHONPATH=$(PYTHONPATH) uv run pytest server/tests/integration --cov ./server/tests --cov-report=xml -vvvv --disable-warnings --cov-append
+
+server-test:
+	server-test-unit
+	server-test-integration
 
 run:
 	@echo "$(OK_COLOR)==>$(NO_COLOR) Running application in docker"

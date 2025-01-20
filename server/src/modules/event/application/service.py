@@ -2,11 +2,11 @@ import typing as t
 from logging import Logger
 
 from modules.event.domain.entity import Event
-from modules.event.infrastructure.repository import EventInMemoryRepository
+from modules.event.domain.repository import EventRepository
 
 
 class EventService:
-    def __init__(self, logger: Logger, event_repository: EventInMemoryRepository):
+    def __init__(self, logger: Logger, event_repository: EventRepository):
         self._logger = logger
         self._event_repo = event_repository
 
