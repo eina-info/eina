@@ -1,0 +1,29 @@
+name: PR Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Lint Code with Super-Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v5
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_PYTHON: true
+          PYTHON_LINTER: ruff
+          LINTER_RULES_PATH: ./ruff.toml
+          VALIDATE_JS: true
+          VALIDATE_TS: true
+          VALIDATE_JSON: true
+          VALIDATE_YAML: true
+          VALIDATE_DOCKER: true

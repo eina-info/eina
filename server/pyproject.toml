@@ -5,19 +5,31 @@ description = "Eina server"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
+    "asyncpg>=0.30.0",
     "dependency-injector>=4.44.0",
     "fastapi>=0.115.0",
     "graphene>=3.4.3",
     "gunicorn>=23.0.0",
-    "sqlalchemy>=2.0.36",
+    "sqlalchemy[asyncio]>=2.0.36",
     "starlette-graphene3>=0.6.0",
     "strawberry-graphql>=0.253.1",
     "uvicorn>=0.32.1",
 ]
 
 [tool.uv]
-dev-dependencies = [
+default-groups = ["lint","test"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope="function"
+
+[dependency-groups]
+lint = [
+    "ruff>=0.7.4",
+]
+test = [
     "pytest-cov>=6.0.0",
     "pytest>=8.3.3",
-    "ruff>=0.7.4",
+    "testcontainers>=4.9.0",
+    "pytest-asyncio>=0.25.1",
 ]

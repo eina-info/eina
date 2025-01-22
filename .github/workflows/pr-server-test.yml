@@ -1,0 +1,31 @@
+name: PR - Test Server
+
+on:
+  pull_request:
+    paths:
+      - 'server/**'
+    branches:
+      - main
+
+jobs:
+  unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install Dependencies
+        run: make server-deps
+
+      - name: Run Unit Tests
+        run: source server/.venv/bin/activate && make server-test-unit
+
+      - name: Run Integration Tests
+        run: source server/.venv/bin/activate && make server-test-integration
+        env:
+          TESTCONTAINERS_RYUK_DISABLED: true

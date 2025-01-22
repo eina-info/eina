@@ -1,27 +1,11 @@
-from datetime import datetime
 from typing import List
 
 from modules.event.domain.entity import Event
 from modules.event.domain.repository import EventRepository
-from shared.domain.entity import TEntityId
+from modules.event.infrastructure.orm import Event as ORMEvent
+from shared.infrastructure.repository import SQLAlchemyAsyncRepository
 
 
-class EventInMemoryRepository(EventRepository):
-    __data = [
-        Event(
-            display_name="foo",
-            location="berlin",
-            description="foo",
-            start_timestamp=datetime.now(),
-            end_timestamp=datetime.now(),
-        ),
-    ]
-
-    def get(self, id: TEntityId) -> Event:
-        return next((entity for entity in self.__data if entity.id == id), None)
-
-    def add(self, entity: Event) -> None:
-        return self.__data.append(entity)
-
+class EventSqlAlchemyRepository(EventRepository, SQLAlchemyAsyncRepository[ORMEvent]):
     def get_by_location(self, location: str) -> List[Event]:
-        return [entity for entity in self.__data if entity.location == location]
+        return self.get_by_filters(location=location)
