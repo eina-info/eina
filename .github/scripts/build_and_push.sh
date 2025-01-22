@@ -2,7 +2,7 @@
 
 set -e
 
-cd $CONTEXT_DIR
+cd "$CONTEXT_DIR"
 rm /tmp/build_args || echo OK
 env >/tmp/build_args
 echo "--build-arg \""$(cat /tmp/build_args | sed -z 's/\n/" --build-arg "/g')"IGNORE_VAR=IGNORE_VAR\"" >/tmp/build_args

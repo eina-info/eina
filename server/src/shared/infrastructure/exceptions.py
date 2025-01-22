@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class UnretryableError(Exception):
     def __init__(self, message: str = "An error occurred."):
         self.message = message
@@ -21,7 +24,7 @@ class RetryableError(Exception):
 
 
 class ORMToEntitySerializationError(UnretryableError):
-    def __init__(self, model: any, data: any):
+    def __init__(self, model: Any, data: Any):
         self.model = model
         self.data = data
         self.message = f"Unable to serialize {model=} from {data=}"

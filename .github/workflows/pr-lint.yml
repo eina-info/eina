@@ -19,12 +19,11 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Python linting
           VALIDATE_PYTHON: true
           PYTHON_LINTER: ruff
           LINTER_RULES_PATH: ./ruff.toml
-          # JavaScript/TypeScript linting for Next.js
           VALIDATE_JS: true
           VALIDATE_TS: true
-          JS_ES_CONFIG_FILE: ./eslintrc.json
-          TS_ES_CONFIG_FILE: ./eslintrc.json
+          VALIDATE_JSON: true
+          VALIDATE_YAML: true
+          VALIDATE_DOCKER: true

@@ -25,11 +25,7 @@ jobs:
       - name: Run Unit Tests
         run: source server/.venv/bin/activate && make server-test-unit
 
-      - name: Configure Testcontainers
-        run: |
-          echo "export TESTCONTAINERS_RYUK_DISABLED=true" >> $GITHUB_ENV
-          echo "Testcontainers configuration set to disable RYUK."
-
       - name: Run Integration Tests
         run: source server/.venv/bin/activate && make server-test-integration
-
+        env:
+          TESTCONTAINERS_RYUK_DISABLED: true

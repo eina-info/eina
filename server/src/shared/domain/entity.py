@@ -2,7 +2,7 @@ from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel
 
-TEntityId = TypeVar("EntityId")
+TEntityId = TypeVar("TEntityId")
 
 
 class IsDeletedMixin(BaseModel):
